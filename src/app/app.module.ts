@@ -10,6 +10,7 @@ import { TriggerComponent } from './trigger/trigger.component';
 import { FlowComponent } from './flow/flow.component';
 import { RelatedLinksComponent } from './related-links/related-links.component';
 import { HomeComponent } from './home/home.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     TriggerComponent,
     FlowComponent,
     RelatedLinksComponent,
-    HomeComponent
+    HomeComponent,
+    CompaniesComponent
   ],
   imports: [
     BrowserModule,
