@@ -11,6 +11,7 @@ import { FlowComponent } from './flow/flow.component';
 import { RelatedLinksComponent } from './related-links/related-links.component';
 import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { SyllabusComponent } from './syllabus/syllabus.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CompaniesComponent } from './companies/companies.component';
     FlowComponent,
     RelatedLinksComponent,
     HomeComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    SyllabusComponent
   ],
   imports: [
     BrowserModule,

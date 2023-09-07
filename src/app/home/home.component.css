@@ -1,0 +1,76 @@
+/* Reset default margin and padding for the entire page */
+body, h1, h2, p, ul, li {
+  margin: 02px;
+  padding: 2px;
+}
+
+/* Style the top navigation bar */
+.top-nav {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-display:initial;
+}
+
+.top-nav ul {
+  list-style-type: none;
+}
+
+.top-nav li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Style sections */
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style headers within sections */
+section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style lists within sections */
+section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Style images within sections */
+section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style multimedia elements */
+audio, video {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Style footer text */
+footer p {
+  margin: 0;
+  font-size: 14px;
+}

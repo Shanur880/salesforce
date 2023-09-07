@@ -7,90 +7,115 @@
   <link rel="stylesheet" href="home.component.css"> <!-- Add your CSS file here -->
 </head>
 <body>
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="#about-salesforce">About Salesforce</a></li>
+      <li><a href="#roles-responsibilities">Roles and Responsibilities</a></li>
+      <li><a href="#salesforce-ecosystem">Salesforce Ecosystem</a></li>
+      <li><a href="#important-topics">Important Topics</a></li>
+    </ul>
+  <ul>
+    <div class="Other">
+      <li><a routerLink="/companies">company</a></li>
+      <li><a routerLink="/trailhead" >company</a></li>
+    </div>
+  </ul>
+  </nav>
+  <nav>
+
+    <div class="nav">
+      <label for="navigation">Syllabus:</label>
+      <select id="navigation" onchange="navigate()">
+        <option value="home">Home</option>
+        <option value="apex">Apex</option>
+        <option value="trigger">Trigger</option>
+        </select>
+    </div>
+
+  </nav>
+
   <!-- Header Section -->
   <header>
-      <h1>Welcome to Master in Salesforce</h1>
-      <p>Your comprehensive guide to Salesforce and its ecosystem</p>
+    <h1>Welcome to Master in Salesforce</h1>
+    <p>Your comprehensive guide to Salesforce and its ecosystem</p>
   </header>
 
   <!-- About Salesforce Section -->
   <section id="about-salesforce">
-      <h2>About Salesforce</h2>
-      <p>
-          Salesforce is a leading customer relationship management (CRM) platform that helps businesses manage their sales, marketing, and customer support activities. It offers a wide range of tools and services to streamline business processes and enhance customer relationships.
-      </p>
+    <h2>About Salesforce</h2>
+    <p>
+      Salesforce is a leading customer relationship management (CRM) platform that helps businesses manage their sales, marketing, and customer support activities. It offers a wide range of tools and services to streamline business processes and enhance customer relationships.
+    </p>
+  </section>
 
-    </section>
-
-    <section id="Roles-Responsebility">
-      <h2>Roles and Responsibility</h2>
-      <p>
-        Strong Experianxe with salesforce lightning components Frameworks(Aura , Lwc)
-      </p>
-      <p>
-        Experience in Salesforce Salesforce Sales Cloud, Service Cloud ,Experience Cloud.
-       </p>
-       <p>
-        Strong Experiance with Configuration, Customization,Programming With Apis, Apex trigger,Batches,Flows and
-        Implements New Instance of Salesforce from Scrathes and deply processes.</p>
-        <p>
-          Must have Knowledge of Front end development 
-        </p>
-
-    </section>
+  <!-- Roles and Responsibilities Section -->
+  <section id="roles-responsibilities">
+    <h2>Roles and Responsibilities</h2>
+    <ul>
+      <li>Strong Experience with Salesforce Lightning components Frameworks (Aura, LWC)</li>
+      <li>Experience in Salesforce Sales Cloud, Service Cloud, Experience Cloud.</li>
+      <li>Strong Experience with Configuration, Customization, Programming with APIs, Apex triggers, Batches, Flows, and implementing new instances of Salesforce from scratch and deploying processes.</li>
+      <li>Must have knowledge of front-end development.</li>
+      <li>Apex, Apex API, trigger, data loader, Visualforce, Chatter, Projects in Salesforce, Design and implements Salesforce integration using REST And  SOAP, API integration with Third-Party Systems, Ant Migration Tools, Salesforce Lightning, Force.com, Aura, SOQL, Async and Sync Apex, different tools knowledge (Bitbucket, Azure DevOps), Copado ANT, Workbench, CPQ, Tableau, Changeset.</li>
+    </ul>
+  </section>
 
   <!-- Salesforce Ecosystem Section -->
   <section id="salesforce-ecosystem">
-      <h2>Salesforce Ecosystem</h2>
-      <p>
-          The Salesforce ecosystem comprises various products and platforms, including Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, and more. Each component is designed to address specific business needs and can be customized to suit your organization's requirements.
-      </p>
+    <h2>Salesforce Ecosystem</h2>
+    <p>
+      The Salesforce ecosystem comprises various products and platforms, including Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, and more. Each component is designed to address specific business needs and can be customized to suit your organization's requirements.
+    </p>
   </section>
 
   <!-- Important Topics Section -->
   <section id="important-topics">
-      <h2>Important Topics</h2>
-      <ul>
-          <li>Sales Cloud</li>
-          <li>Service Cloud</li>
-          <li>Marketing Cloud</li>
-          <li>Lightning Web Components (LWC)</li>
-          <li>Apex Programming</li>
-          <!-- Add more important topics as needed -->
-      </ul>
+    <h2>Important Topics</h2>
+    <ul>
+      <li>Sales Cloud</li>
+      <li>Service Cloud</li>
+      <li>Marketing Cloud</li>
+      <li>Lightning Web Components (LWC)</li>
+      <li>Apex Programming</li>
+      <!-- Add more important topics as needed -->
+    </ul>
   </section>
 
   <!-- Thumbnails and Icons Section -->
   <section id="thumbnails-icons">
-      <h2>Thumbnails and Icons</h2>
-      <div class="thumbnails">
-          <img src="salesforce-thumbnail1.jpg" alt="Salesforce Thumbnail 1">
-          <img src="salesforce-thumbnail2.jpg" alt="Salesforce Thumbnail 2">
-          <!-- Add more thumbnails as needed -->
-      </div>
-      <div class="icons">
-          <img src="salesforce-icon1.png" alt="Salesforce Icon 1">
-          <img src="salesforce-icon2.png" alt="Salesforce Icon 2">
-          <!-- Add more icons as needed -->
-      </div>
+    <h2>Thumbnails and Icons</h2>
+    <div class="thumbnails">
+      <img src="salesforce-thumbnail1.jpg" alt="Salesforce Thumbnail 1">
+      <img src="salesforce-thumbnail2.jpg" alt="Salesforce Thumbnail 2">
+      <!-- Add more thumbnails as needed -->
+    </div>
+    <div class="icons">
+      <img src="salesforce-icon1.png" alt="Salesforce Icon 1">
+      <img src="salesforce-icon2.png" alt="Salesforce Icon 2">
+      <!-- Add more icons as needed -->
+    </div>
   </section>
 
   <!-- Multimedia Section -->
   <section id="multimedia">
-      <h2>Multimedia</h2>
-      <audio controls>
-          <source src="salesforce-podcast.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-      </audio>
-      <video controls>
-          <source src="salesforce-video.mp4" type="video/mp4">
-          Your browser does not support the video element.
-      </video>
+    <h2>Multimedia</h2>
+    <audio controls>
+      <source src="salesforce-podcast.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <video controls>
+      <source src="salesforce-video.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
   </section>
 
   <!-- Footer Section -->
   <footer>
-      <p>&copy; 2023 Master in Salesforce</p>
+    <p>&copy; 2023 Master in Salesforce</p>
   </footer>
 </body>
+<router-outlet>
+
+</router-outlet>
 </html>

@@ -7,6 +7,8 @@ import { SuperbadgesComponent } from './superbadges/superbadges.component';
 import { TrailheadsComponent } from './trailheads/trailheads.component';
 import { TriggerComponent } from './trigger/trigger.component';
 import { HomeComponent } from './home/home.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { SyllabusComponent } from './syllabus/syllabus.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'trailheads', component: TrailheadsComponent},
   {path: 'trigger', component: TriggerComponent},
   { path: 'home', component: HomeComponent },
+  {path : 'company', component: CompaniesComponent},
+  {path: 'syllabus', component: SyllabusComponent},
   { path: '**', redirectTo: '/home' }
 ];
 
