@@ -9,6 +9,7 @@ import { TriggerComponent } from './trigger/trigger.component';
 import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { SyllabusComponent } from './syllabus/syllabus.component';
+import { BookOfSalesforceComponent } from './book-of-salesforce/book-of-salesforce.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {path : 'company', component: CompaniesComponent},
   {path: 'syllabus', component: SyllabusComponent},
+  {path : 'book-of-salesforce', component: BookOfSalesforceComponent},
   { path: '**', redirectTo: '/home' }
 ];
 

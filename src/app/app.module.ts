@@ -12,6 +12,7 @@ import { RelatedLinksComponent } from './related-links/related-links.component';
 import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { SyllabusComponent } from './syllabus/syllabus.component';
+import { BookOfSalesforceComponent } from './book-of-salesforce/book-of-salesforce.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SyllabusComponent } from './syllabus/syllabus.component';
     RelatedLinksComponent,
     HomeComponent,
     CompaniesComponent,
-    SyllabusComponent
+    SyllabusComponent,
+    BookOfSalesforceComponent
   ],
   imports: [
     BrowserModule,
