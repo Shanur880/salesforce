@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { SyllabusComponent } from './syllabus/syllabus.component';
 import { BookOfSalesforceComponent } from './book-of-salesforce/book-of-salesforce.component';
+import { Apexpage2Component } from './apex/apexpage2/apexpage2.component';
+import { Apexpage3Component } from './apex/apexpage3/apexpage3.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BookOfSalesforceComponent } from './book-of-salesforce/book-of-salesfor
     HomeComponent,
     CompaniesComponent,
     SyllabusComponent,
-    BookOfSalesforceComponent
+    BookOfSalesforceComponent,
+    Apexpage2Component,
+    Apexpage3Component
   ],
   imports: [
     BrowserModule,
