@@ -1,114 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome CSS -->
-<title>SalesForce-Friend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
+        #wrapper {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #495057;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #ced4da;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .project-card {
+            width: calc(33.333% - 20px);
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-details {
+            padding: 15px;
+        }
+
+        .project-details h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .project-details p {
+            color: #666;
+        }
+
+        .project-details a {
+            display: block;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .project-details a:hover {
+            background-color: #0056b3;
+        }
+
+        .skills {
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2em;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skills-list li {
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .skills-list li:hover {
+            transform: scale(1.05);
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+           
+           /* ... (Previous CSS content) ... */
+
+.contact {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contact h2 {
+    font-size: 2em;
+}
+
+.contact p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.contact-links {
+    margin-top: 20px;
+}
+/* ... (Previous CSS content) ... */
+
+.skills-list li {
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+
+.skills-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Tooltip styling */
+.skills-list li::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    visibility: hidden;
+}
+
+.skills-list li:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.contact-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-link:hover {
+    background-color: #0056b3;
+}
+ font-size: 1.2em;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .links-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .link-item {
+            text-align: center;
+        }
+
+        .link-item i {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #343a40;
+            transition: color 0.3s;
+        }
+
+        .link-item a:hover {
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                width: 100%;
+            }
+
+            .skills-list li {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="header">
-  <h1>Master In Salesforce</h1>
-  </div>
-  <div class="container">
-    <div class="home">
-      <a routerLink="home">Home
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-smart-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M19 8.71l-5.333 -4.148a2.666 2.666 0 0 0 -3.274 0l-5.334 4.148a2.665 2.665 0 0 0 -1.029 2.105v7.2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.2c0 -.823 -.38 -1.6 -1.03 -2.105"></path>
-          <path d="M16 15c-2.21 1.333 -5.792 1.333 -8 0"></path>
-       </svg>
-      </a>
-    </div >
-    <div class="syllabus">
-      <a routerLink="syllabus">Syllabus
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
-          <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
-          <path d="M3 6l0 13"></path>
-          <path d="M12 6l0 13"></path>
-          <path d="M21 6l0 13"></path>
-       </svg>
-      </a>
+
+    <div id="wrapper">
+
+        <header>
+            <h1>Your Name</h1>
+            <p>Web Developer</p>
+        </header>
+
+        <nav>
+            <a href="#blogs">Blogs</a>
+            <a href="#codes">Codes</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="#links">Links</a>
+        </nav>
+
+        <!-- Recent Blogs Section -->
+        <section id="blogs">
+            <h2>Recent Blogs</h2>
+
+            <!-- Use a responsive iframe -->
+            <div class="iframe-container">
+                <!-- Replace 'your-blog-url' with the actual URL of your blog -->
+                <iframe src="your-blog-url" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Codes Section -->
+        <section id="codes">
+            <h2>New Codes</h2>
+
+            <ul id="codeList"></ul>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                // Fetch your repositories using GitHub API
+                $.ajax({
+                    url: 'https://api.github.com/users/your-username/repos?sort=updated',
+                    method: 'GET',
+                    success: function(data) {
+                        // Display information about the latest repository
+                        const latestRepo = data[0];
+                        const codeList = $('#codeList');
+                        const listItem = $('<li></li>');
+
+                        listItem.html(`<strong>${latestRepo.name}</strong>: ${latestRepo.description}`);
+                        codeList.append(listItem);
+                    },
+                    error: function(error) {
+                        console.error('Error fetching GitHub data:', error);
+                    }
+                });
+            </script>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project-cards">
+
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <img class="project-image" src="project1-image.jpg" alt="Project 1 Image">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="hover-button">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <img class="project-image" src="project2-image.jpg" alt="Project 2 Image">
+                    <div class="project-details">
+                        <h3>Project Title 2</h3>
+                        <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="hover-button">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Add more project cards as needed -->
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+        
+            <ul class="skills-list">
+                <li data-tooltip="Semantic markup and structure">HTML</li>
+                <li data-tooltip="Style and layout design">CSS</li>
+                <li data-tooltip="Client-side scripting">JavaScript</li>
+                <li data-tooltip="JavaScript library for building user interfaces">React</li>
+                <li data-tooltip="JavaScript runtime for server-side development">Node.js</li>
+                <li data-tooltip="Structured Query Language">SQL</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+      <!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+
+    <p>If you have any questions or inquiries, feel free to reach out:</p>
+
+    <div class="contact-links">
+        <a href="mailto:shanur88047@gmail.com" class="contact-link">Send an Email</a>
+    </div>
+</section>
+
+
+        <!-- Links to Other Websites Section -->
+        <section id="links">
+            <h2>Links</h2>
+
+            <div class="links-container">
+
+                <!-- Link Item 1 -->
+                <div class="link-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/Shanur880" target="_blank">GitHub</a>
+                </div>
+
+                <!-- Link Item 2 -->
+                <div class="link-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/shanur-rahman880/" target="_blank">LinkedIn</a>
+                </div>
+
+                <!-- Add more link items as needed -->
+
+            </div>
+        </section>
 
     </div>
-      <div class="apex">
-        <a routerLink="apex">Apex</a>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rosette" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"></path>
-       </svg>
-      </div>
-      <div class="trigeer">
-        <a routerLink="trigger">Trigger
-        </a>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tank" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M2 12m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"></path>
-          <path d="M6 12l1 -5h5l3 5"></path>
-          <path d="M21 9l-7.8 0"></path>
-       </svg>
-      </div>
-   <div class="flow">
-    <a routerLink="flow">Flow
-    </a>
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-stackoverflow" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-1"></path>
-      <path d="M8 16h8"></path>
-      <path d="M8.322 12.582l7.956 .836"></path>
-      <path d="M8.787 9.168l7.826 1.664"></path>
-      <path d="M10.096 5.764l7.608 2.472"></path>
-   </svg>
 
-   </div>
-
-    <div class="superbadges">
-      <a routerLink="superbadges">Superbadges</a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-military-award" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 13m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-        <path d="M8.5 10.5l-1 -2.5h-5.5l2.48 5.788a2 2 0 0 0 1.84 1.212h2.18"></path>
-        <path d="M15.5 10.5l1 -2.5h5.5l-2.48 5.788a2 2 0 0 1 -1.84 1.212h-2.18"></path>
-     </svg>
-    </div>
-<div class="trailheads">
-<a routerLink="trailheads">Trailhead
-</a>
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-analytics" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-  <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
-  <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
-  <path d="M9 17v-5"></path>
-  <path d="M12 17v-1"></path>
-  <path d="M15 17v-3"></path>
-</svg>
-</div>
-<div class="related-links">
-<a routerLink="related-links">RelatedLinks
-</a>
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circles-relation" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-  <path d="M9.183 6.117a6 6 0 1 0 4.511 3.986"></path>
-  <path d="M14.813 17.883a6 6 0 1 0 -4.496 -3.954"></path>
-</svg>
-</div>
-<div class="book">
-  <a routerLink="book-of-salesforce">BOOK</a>
-
-
-</div>
-  </div>
-<router-outlet>
-</router-outlet>
-<footer>
-  <div class="container">
-      <p>&copy; 2023 Master In Salesforce. All rights reserved.</p>
-  </div>
-</footer>
- </body>
-
+</body>
 </html>
